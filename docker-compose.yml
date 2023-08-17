@@ -1,0 +1,16 @@
+version: '1.0'
+services:
+    dreamerv3:
+      build:
+        context: .
+        dockerfile: dreamerv3/Dockerfile
+      entrypoint: ["tail", "-f", "/dev/null"]
+      volumes:
+        - .:/embodied
+      deploy:
+        resources:
+          reservations:
+            devices:
+              - driver: nvidia
+                count: 1
+                capabilities: [gpu]

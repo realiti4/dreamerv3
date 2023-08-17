@@ -4,6 +4,7 @@ set -eu
 apt-get update
 apt-get install -y wget
 apt-get install -y unrar
+apt-get install -y cmake libz-dev
 apt-get clean
 
 pip3 install gym==0.19.0
